@@ -1,0 +1,16 @@
+name: Metadata of the Workflow
+on: [push, workflow_dispatch]
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Workflow Metadata
+        run: |
+          echo "Workflow Name: ${{ github.workflow }}"
+          echo "Event Name: ${{ github.event_name }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Run ID: ${{ github.run_id }}"
+          echo "Run Number: ${{ github.run_number }}"
+          echo "Job Status: ${{ job.status }}"
