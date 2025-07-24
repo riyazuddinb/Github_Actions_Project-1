@@ -1,5 +1,5 @@
 name: Metadata of the Workflow
-on: [push, workflow_dispatch]
+on: workflow_dispatch
 jobs:
   metadata:
     runs-on: ubuntu-latest
