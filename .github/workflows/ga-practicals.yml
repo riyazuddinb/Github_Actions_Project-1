@@ -28,7 +28,7 @@ jobs:
      - name: Build Application
        run: |
             echo "Building application..."
-            run npm run build
+            run npm build
             echo "Build completed successfully!"
      - name: Deploy Application
        run: |
