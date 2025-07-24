@@ -25,4 +25,6 @@ jobs:
      - name: Deploy Application
        run: |
             echo "Deploying application..."
+            echo "taking Confirmation...."
+            echo "Application deployed successfully!"
         
