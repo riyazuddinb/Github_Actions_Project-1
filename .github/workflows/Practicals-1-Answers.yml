@@ -40,8 +40,6 @@ jobs:
   build:
     needs: test
     runs-on: ubuntu-latest
-    outputs:
-      state-file: ${{ steps.publish.outputs.state-file }}
     steps:
       - name: Get code
         uses: actions/checkout@v4
@@ -54,8 +52,6 @@ jobs:
         run: npm ci
       - name: Build code
         run: npm run build
-      - name: Publish the file name
-        run: find /dist/*.js -type f -execdir echo "state-file={}" >> $GITHUB_ENV ';'
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -76,7 +72,6 @@ jobs:
             package.json
       - name: output the files
         run: ls -ltr
-      - name: Get file name
-        run: "echo ${{ needs.outputs.state-file}}"
+    
       - name: Deploying
         run: echo "Deployment done successfully!" 
