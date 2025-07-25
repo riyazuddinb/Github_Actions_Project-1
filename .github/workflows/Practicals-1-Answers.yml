@@ -2,7 +2,7 @@ name: Deployment Exercise 2
 on: 
   push:
     branches:
-      - main
+      - testing
   pull_request:
     types: [opened, closed, synchronize, reopened]
     branches:
