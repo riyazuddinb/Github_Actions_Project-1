@@ -12,22 +12,23 @@ jobs:
     env_varibales_1:
         runs-on: ubuntu-latest
         env: 
-            PORT: 4000
+            PORT1: 4000
         steps:
             - name: Set Environment Variables
               run: |
                echo "MONGODB_DB_Name: ${{ env.MONGODB_DB_Name }}"
                echo "MONGODB_DB_Username: ${{ env.MONGODB_DB_Username }}"
-               echo "The output of PORT is: ${{ env.PORT }}"
+               echo "The output of PORT is: ${{ env.PORT1 }}"
 
     env_variables_2:
         runs-on: ubuntu-latest
+        needs: env_varibales_1
         env: 
-            PORT: 5000
+            PORT2: 5000
         steps:
             - name: Set Environment Variables 2
               run: |
                     echo "MONGODB_DB_Name: ${{ env.MONGODB_DB_Name }}"
                     echo "MONGODB_DB_Username: ${{ env.MONGODB_DB_Username }}"
-                    echo "The output of PORT is: ${{ env.PORT }}"
+                    echo "The output of PORT is: ${{ env.PORT2 }}"
               
