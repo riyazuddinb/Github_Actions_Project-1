@@ -4,7 +4,7 @@ on:
       branches: 
         - variables
 env: 
-    MONGODB_DB_Name: ${{ secrets.MONGODB_DB_Name}}
+    MONGODB_DB_Name: ${{secrets.MONGODB_DB_Name}}
     MONGODB_DB_Username: practice-project-user
     MONGODB_DB_Password: practice-project-password
 
@@ -16,10 +16,13 @@ jobs:
             PORT1: ${{ secrets.PORT1 }}
         steps:
             - name: Set Environment Variables
+              env:
+                Step_env1: Killer
               run: |
                echo "MONGODB_DB_Name: ${{ env.MONGODB_DB_Name }}"
                echo "MONGODB_DB_Username: ${{ env.MONGODB_DB_Username }}"
-               echo "The output of PORT is: ${{ env.PORT1 }}"
+               echo "The output of PORT is: $PORT1"
+               echo "Step_env1: ${{ env.Step_env1 }}"
 
     env_variables_2:
         runs-on: ubuntu-latest
