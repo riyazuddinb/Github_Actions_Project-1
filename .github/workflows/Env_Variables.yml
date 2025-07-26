@@ -1,0 +1,22 @@
+name: Variables Experiment
+on: 
+    push:
+      branches: 
+        - testing
+env: 
+    MONGODB_DB_Name: practice-project
+    MONGODB_DB_Username: practice-project-user
+    MONGODB_DB_Password: practice-project-password
+
+jobs:
+    env_varibales:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get code
+              uses: actions/checkout@v4
+            - name: Set Environment Variables
+              run: |
+               "echo MONGODB_DB_Name: ${{ env.MONGODB_DB_Name }}"
+                
+                
+              
