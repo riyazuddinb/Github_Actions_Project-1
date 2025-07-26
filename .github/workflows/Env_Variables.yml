@@ -2,7 +2,7 @@ name: Variables Experiment
 on: 
     push:
       branches: 
-        - testing
+        - variables
 env: 
     MONGODB_DB_Name: practice-project
     MONGODB_DB_Username: practice-project-user
